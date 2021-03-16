@@ -1,2 +1,2 @@
 # sleepywinz.github.io
-self site
+a website about myself 
