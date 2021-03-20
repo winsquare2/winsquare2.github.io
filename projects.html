@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head><title>The Life and Times of Winsquarez</title>
+<meta name="viewport" content="width=device-width shrink-to-fit=no">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="w3.css">
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+ 
+  $("a").on('click', function(event) {
+
+    if (this.hash !== "") {
+      event.preventDefault();
+
+   
+      var hash = this.hash;
+
+    
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 850, function(){
+   
+        
+        window.location.hash = hash;
+      });
+    } 
+  });
+});
+</script>
+<style>
+html
+{
+margin:0px;
+padding:0px;
+width:100%;
+}
+body
+{
+margin:0;
+font-family:"Century Gothic",Verdana,sans-serif;
+min-width:1350px;
+width:100%;
+}
+figure
+{
+display:inline-block;padding:0px; 
+}
+p.top
+{
+text-align:center;font-size:26px;margin-bottom:0xp;color:#272c33;margin:0px 100px;
+}
+p.head
+{
+text-align:center;font-family:Georgia,Times New Roman;font-size:40px;font-style:italic;
+}
+
+p.fill
+{
+font-size:20px;text-align:center;margin:0px 100px;
+}
+p.stat
+{
+font-size:20px;text-align:center;margin:0px 100px;
+}
+p.story
+{
+font-family:Impact,Verdana;font-weight:bold;font-size:28px;color:#272c33;text-align:center;
+}
+p.stat1
+{
+font-family:Impact,Verdana;font-weight:bold;font-size:28px;color:#272c33;text-align:center;
+}
+a
+{
+-webkit-transition-duration: 0.5s; /* Safari */
+ transition-duration: 0.5s;
+}
+a:hover
+{
+color:aquamarine;
+text-decoration:none;
+}
+button
+{
+-webkit-transition-duration: 0.5s; /* Safari */
+ transition-duration: 0.5s;
+}
+button:hover
+{
+color:white;
+text-decoration:none;
+}
+
+</style>
+<body>
+
+<!-- Sidebar -->
+<div class="w3-sidebar w3-bar-block w3-border-right w3-animate-left" style="display:none;" id="mySidebar">
+  <button onclick="w3_close() " class="w3-bar-item w3-button1" style = "font-size:24px;background-color:white;"><a>CLOSE &times;</a></button>
+<br>
+  <a href="index.html" class="w3-bar-item w3-button1" style = "font-size:24px;">ABOUT ME</a>
+<br>
+  <a href="about.html" class="w3-bar-item w3-button1" style = "font-size:24px;">MY PROJECTS</a>
+	
+</div>
+
+<!-- Page Content -->
+<div class="w3-black" >
+  <button class="w3-button w3-black w3-xlarge" onclick="w3_open()"><i class="fa fa-bars" style="font-size:60px;"></i>
+</button> 
+<span style="font-family:'Lucida Console',monospace;font-size:38px;position:relative;top:8px;left:450px;">Welcome to my life!</span>
+</div>
+<br>
+
+
+<center>
+<figure style="position:relative;"><img src = "web_images/winwin.jpg" alt ="" width="300px" height="300px"><figcaption style="text-align:center;font-family:'Lucida Console',monospace;font-size:60px;">Khor Win Win</figcaption></figure>
+</center>
+
+<p class="top">An avid gamer trying to explore the crypto wilderness.<br>Currently reading and writing crypto at CoinGecko. Check out some of my stuff!</p>
+<br>
+<br>
+<p style ="text-align:center;"><span style="font-family:'Lucida Console',monospace;font-size:60px;position:relative;">Let's Connect!</span></p>
+
+<center>
+<a href="https://www.facebook.com/khor.win.16/" class="w3-bar-item w3-button1"><i class="fa fa-facebook-f" style="font-size:200px;padding-right:100px;"></i></a>
+<a href="https://www.instagram.com/winsquarez/" class="w3-bar-item w3-button1"><i class="fa fa-instagram" style="font-size:200px;padding-right:100px;"></i></a>
+<a href="https://www.linkedin.com/in/khor-win-win/" class="w3-bar-item w3-button1"><i class="fa fa-linkedin-square" style="font-size:200px;"></i></a>
+</center>	
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+}
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+}
+</script>   
+</body>
+</html> 
