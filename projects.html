@@ -1,109 +1,79 @@
 <!DOCTYPE html>
 <html>
 <head><title>The Life and Times of Winsquarez</title>
-<meta name="viewport" content="width=device-width shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="w3.css">
 </head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
- 
   $("a").on('click', function(event) {
-
     if (this.hash !== "") {
       event.preventDefault();
-
-   
       var hash = this.hash;
-
-    
       $('html, body').animate({
         scrollTop: $(hash).offset().top
       }, 850, function(){
-   
-        
         window.location.hash = hash;
       });
-    } 
+    }
   });
 });
 </script>
 <style>
-html
-{
-margin:0px;
-padding:0px;
-width:100%;
-}
-body
-{
-margin:0;
-font-family:"Century Gothic",Verdana,sans-serif;
-min-width:1350px;
-width:100%;
-}
-figure
-{
-display:inline-block;padding:0px; 
-}
-p.top
-{
-text-align:center;font-size:26px;margin-bottom:0xp;color:#272c33;margin:0px 100px;
-}
-p.head
-{
-text-align:center;font-family:Georgia,Times New Roman;font-size:40px;font-style:italic;
-}
+html { margin:0px; padding:0px; width:100%; }
+body { margin:0; font-family:"Century Gothic",Verdana,sans-serif; width:100%; }
 
-p.fill
-{
-font-size:20px;text-align:center;margin:0px 100px;
-}
-p.stat
-{
-font-size:20px;text-align:center;margin:0px 100px;
-}
-p.story
-{
-font-family:Impact,Verdana;font-weight:bold;font-size:28px;color:#272c33;text-align:center;
-}
-p.stat1
-{
-font-family:Impact,Verdana;font-weight:bold;font-size:28px;color:#272c33;text-align:center;
-}
-	
-a
-{
--webkit-transition-duration: 0.5s; /* Safari */
- transition-duration: 0.5s;
-}
-a:link, a:visited 
-{
-color:black;
-text-decoration:none;
-}
-	
-a:hover
-{
-color:aquamarine;
-text-decoration:none;
-}
+a { -webkit-transition-duration: 0.5s; transition-duration: 0.5s; }
+a:link, a:visited { color:black; text-decoration:none; }
+a:hover { color:aquamarine; text-decoration:none; }
 
-button
-{
--webkit-transition-duration: 0.5s; /* Safari */
- transition-duration: 0.5s;
-}
-button:hover
-{
-color:white;
-text-decoration:none;
-}
+button { -webkit-transition-duration: 0.5s; transition-duration: 0.5s; }
+button:hover { color:white; text-decoration:none; }
 
+/* Section headings */
+.sec {
+  font-family:'Lucida Console',monospace; font-size:52px; font-weight:normal;
+  text-align:center; margin:0 0 20px; line-height:1.2;
+}
+.sec-wrap { margin-bottom:60px; }
+
+/* Carousel */
+.cx { position:relative; max-width:1000px; margin:0 auto; padding:0 56px; --w:221px; --fs:24px; }
+.cx-track {
+  display:flex; gap:24px; overflow-x:auto; scroll-snap-type:x mandatory;
+  scroll-behavior:smooth; -webkit-overflow-scrolling:touch;
+  scrollbar-width:none; padding-bottom:4px;
+}
+.cx-track::-webkit-scrollbar { display:none; }
+.cx-track > :first-child { margin-left:auto; }
+.cx-track > :last-child { margin-right:auto; }
+.cx-item { flex:0 0 var(--w); width:var(--w); margin:0; padding:0; scroll-snap-align:start; text-align:center; }
+.cx-item a { display:block; }
+.cx-item img { display:block; margin:0 auto; max-width:100%; }
+.cx-item figcaption {
+  padding-top:20px; text-align:center;
+  font-family:'Lucida Console',monospace; font-size:var(--fs);
+}
+.cx-btn {
+  position:absolute; top:50%; transform:translateY(-50%);
+  width:44px; height:44px; border:0; border-radius:50%;
+  background:#272c33; color:#fff; font-size:20px; line-height:44px; padding:0; cursor:pointer;
+}
+.cx-prev { left:0; }
+.cx-next { right:0; }
+.cx-btn:hover { background:aquamarine; color:#272c33; }
+.cx-btn:disabled { opacity:0.2; cursor:default; background:#272c33; color:#fff; }
+.cx-static .cx-btn { display:none; }
+
+@media (max-width:600px) {
+  .cx { padding:0 40px; }
+  .cx-btn { width:34px; height:34px; line-height:34px; font-size:16px; }
+  .sec { font-size:36px; }
+}
 </style>
 <body>
 
@@ -114,79 +84,94 @@ text-decoration:none;
   <a href="index.html" class="w3-bar-item w3-button1" style = "font-size:24px;">ABOUT ME</a>
 <br>
   <a href="projects.html" class="w3-bar-item w3-button1" style = "font-size:24px;">MY PROJECTS</a>
-	
 </div>
 
 <!-- Page Content -->
 <div class="w3-black" >
   <button class="w3-button w3-black w3-xlarge" onclick="w3_open()"><i class="fa fa-bars" style="font-size:60px;"></i>
-</button> 
+</button>
 </div>
 <br>
-<center>	
-<h style="font-family:'Lucida Console',monospace;font-size:52px;position:relative;"> Games </h>
-	<br>
-<a href="https://winsquare2.itch.io/foan"><img src = "web_images/foan.jpg" alt ="" width="395px" height="315px"><figcaption style="padding-top:20px;text-align:center;font-family:'Lucida Console',monospace;font-size:24px;">Fate of a Ninja: Apocalypse</figcaption></a>	
-</center>
-<br><br>	
-<center>	
-<h style="font-family:'Lucida Console',monospace;font-size:52px;position:relative;"> Books </h>
-	<br>
-<figure><a href="https://landing.coingecko.com/how-to-bitcoin/" class="w3-bar-item w3-button1"><img src = "web_images/bitcoinbook.jpg" alt ="" width="221px" height="313px"><figcaption style="padding-top:20px;text-align:center;font-family:'Lucida Console',monospace;font-size:24px;">How To Bitcoin<br><br> </figcaption></a></figure>
-<figure><a href="https://landing.coingecko.com/how-to-defi/" class="w3-bar-item w3-button1"><img src = "web_images/defi_beginner.jpg" alt ="" width="221px" height="313px"><figcaption style="padding-top:20px;text-align:center;font-family:'Lucida Console',monospace;font-size:24px;">How To Defi:<br>Beginner</figcaption></a></figure>
-<figure><a href="https://landing.coingecko.com/how-to-defi/" class="w3-bar-item w3-button1"><img src = "web_images/defi_advanced.jpg" alt ="" width="221px" height="313px"><figcaption style="padding-top:20px;text-align:center;font-family:'Lucida Console',monospace;font-size:24px;">How To Defi:<br>Advanced</figcaption></a></figure>
-<figure><a href="https://landing.coingecko.com/how-to-nft/" class="w3-bar-item w3-button1"><img src = "web_images/how-to-nft.jpg" alt ="" width="221px" height="313px"><figcaption style="padding-top:19px;text-align:center;font-family:'Lucida Console',monospace;font-size:24px;">How To NFT<br><br></figcaption></a></figure>
-</center>
-<br><br>
-<center>	
-<h style="font-family:'Lucida Console',monospace;font-size:52px;position:relative;"> Articles </h>
-<br>
-<figure><a href="https://www.coingecko.com/research/publications/decentralized-options-a-comparison-of-designs" class="w3-bar-item w3-button1"><img src = "web_images/options.jpg" alt ="" width="300px" height="150px"><figcaption style="padding-top:20px;text-align:center;font-family:'Lucida Console',monospace;font-size:22px;">Decentralized Options:<br> A Comparison of Designs</figcaption></a></figure>
-<figure><a href="https://www.coingecko.com/research/publications/yield-farming-on-binance-smart-chain" class="w3-bar-item w3-button1"><img src = "web_images/bsc.jpg" alt ="" width="300px" height="150px"><figcaption style="padding-top:20px;text-align:center;font-family:'Lucida Console',monospace;font-size:22px;">Yield Farming on<br> Binance Smart Chain</figcaption></a></figure>
-<figure><a href="https://www.coingecko.com/research/publications/yield-farming-on-solana" class="w3-bar-item w3-button1"><img src = "web_images/sam.jpg" alt ="" width="300px" height="150px"><figcaption style="padding-top:20px;text-align:center;font-family:'Lucida Console',monospace;font-size:22px;">Yield Farming <br> on Solana</figcaption></a></figure>
-<br>
-<figure><a href="https://www.coingecko.com/research/publications/yield-farming-on-polygon" class="w3-bar-item w3-button1"><img src = "web_images/polygon.png" alt ="" width="300px" height="150px"><figcaption style="padding-top:20px;text-align:center;font-family:'Lucida Console',monospace;font-size:22px;">Yield Farming<br> on Polygon</figcaption></a></figure>
-<figure><a href="https://www.coingecko.com/research/publications/tokenizing-future-yield" class="w3-bar-item w3-button1"><img src = "web_images/future-yield.png" alt ="" width="300px" height="150px"><figcaption style="padding-top:20px;text-align:center;font-family:'Lucida Console',monospace;font-size:22px;">Tokenizing<br> Future Yield </figcaption></a></figure>
-<figure><a href="https://www.coingecko.com/research/publications/chiliz-bringing-power-back-to-the-fans" class="w3-bar-item w3-button1"><img src = "web_images/chiliz.JPG" alt ="" width="300px" height="150px"><figcaption style="padding-top:20px;text-align:center;font-family:'Lucida Console',monospace;font-size:22px;">Chiliz - Bringing Power <br> Back To The Fans </figcaption></a></figure>
-<br>
-<figure><a href="https://www.coingecko.com/research/publications/play-to-earn-a-study-on-scholarship-viability" class="w3-bar-item w3-button1"><img src = "web_images/axie.JPG" alt ="" width="300px" height="150px"><figcaption style="padding-top:20px;text-align:center;font-family:'Lucida Console',monospace;font-size:22px;">Play-to-Earn: A Study <br>on Scholarship Viability</figcaption></a></figure>
-<figure><a href="https://www.coingecko.com/research/publications/yield-farming-on-avalanche" class="w3-bar-item w3-button1"><img src = "web_images/avax.JPG" alt ="" width="300px" height="150px"><figcaption style="padding-top:20px;text-align:center;font-family:'Lucida Console',monospace;font-size:22px;">Yield Farming on<br> Avalanche </figcaption></a></figure>	
-<figure><a href="https://www.coingecko.com/research/publications/how-to-get-started-with-decentraland-gameplay-review" class="w3-bar-item w3-button1"><img src = "web_images/decentra.JPG" alt ="" width="300px" height="150px"><figcaption style="padding-top:20px;text-align:center;font-family:'Lucida Console',monospace;font-size:22px;">How To Get Started<br>With Decentraland</figcaption></a></figure>	
-<br>
-<figure><a href="https://www.coingecko.com/research/publications/fantom-ftm-token-explained-why-is-it-so-unique" class="w3-bar-item w3-button1"><img src = "web_images/ftm.png" alt ="" width="300px" height="150px"><figcaption style="padding-top:20px;text-align:center;font-family:'Lucida Console',monospace;font-size:22px;">Fantom Explained:<br>Why Is It So Unique</figcaption></a></figure>
-<figure><a href="https://www.coingecko.com/research/publications//is-liquidity-drying-up-in-the-crypto-markets" class="w3-bar-item w3-button1"><img src = "web_images/liq.png" alt ="" width="300px" height="150px"><figcaption style="padding-top:20px;text-align:center;font-family:'Lucida Console',monospace;font-size:22px;">Is Liquidity Drying Up<br>In The Crypto Markets?</figcaption></a></figure>	
-<figure><a href="https://www.coingecko.com/research/publications/what-is-apy-apr-and-impermanent-loss" class="w3-bar-item w3-button1"><img src = "web_images/apy.png" alt ="" width="300px" height="150px"><figcaption style="padding-top:20px;text-align:center;font-family:'Lucida Console',monospace;font-size:22px;">What Is APY, APR and<br>Impermanent Loss</figcaption></a></figure>
-<br>
-<figure><a href="https://www.coingecko.com/research/publications/the-whitelist-how-to-get-early-access-to-nft-drops" class="w3-bar-item w3-button1"><img src = "web_images/whitelist.png" alt ="" width="300px" height="150px"><figcaption style="padding-top:20px;text-align:center;font-family:'Lucida Console',monospace;font-size:22px;">How To Get Early<br>Access to NFT Drops</figcaption></a></figure>
-<figure><a href="https://www.coingecko.com/research/publications/what-s-going-on-in-aave-v3" class="w3-bar-item w3-button1"><img src = "web_images/aave.png" alt ="" width="300px" height="150px"><figcaption style="padding-top:20px;text-align:center;font-family:'Lucida Console',monospace;font-size:22px;">What's Going On<br>In Aave V3?</figcaption></a></figure>	
-<figure><a href="https://www.coingecko.com/research/publications/the-evolution-of-hedging-and-delta-neutral-strategies" class="w3-bar-item w3-button1"><img src = "web_images/delta.png" alt ="" width="300px" height="150px"><figcaption style="padding-top:20px;text-align:center;font-family:'Lucida Console',monospace;font-size:22px;">Hedging and<br>Delta-Neutral Strategies</figcaption></a></figure>
-<br>
-<figure><a href="https://www.coingecko.com/research/publications/the-curve-wars-will-there-be-any-survivors" class="w3-bar-item w3-button1"><img src = "web_images/curve.png" alt ="" width="300px" height="150px"><figcaption style="padding-top:20px;text-align:center;font-family:'Lucida Console',monospace;font-size:22px;">The Curve<br>Wars</figcaption></a></figure>
-<figure><a href="https://www.coingecko.com/research/publications/bring-it-on-bancor-3" class="w3-bar-item w3-button1"><img src = "web_images/bancor.png" alt ="" width="300px" height="150px"><figcaption style="padding-top:20px;text-align:center;font-family:'Lucida Console',monospace;font-size:22px;">Bring It On,<br>Bancor 3!</figcaption></a></figure>	
-<figure><a href="https://www.coingecko.com/research/publications/reddit-nfts-the-new-gateway-for-newbies" class="w3-bar-item w3-button1"><img src = "web_images/reddit.png" alt ="" width="300px" height="150px"><figcaption style="padding-top:20px;text-align:center;font-family:'Lucida Console',monospace;font-size:22px;">Reddit NFTs<br>Gateway for Newbies</figcaption></a></figure>
-<br>
-<figure><a href="https://www.coingecko.com/research/publications/insights-and-implications-of-the-mango-squeeze" class="w3-bar-item w3-button1"><img src = "web_images/mango.png" alt ="" width="300px" height="150px"><figcaption style="padding-top:20px;text-align:center;font-family:'Lucida Console',monospace;font-size:22px;">The Mango<br>Squeeze</figcaption></a></figure>
-<figure><a href="https://www.coingecko.com/research/publications/metamask-s-latest-privacy-update-what-can-you-do-to-preserve-your-privacy" class="w3-bar-item w3-button1"><img src = "web_images/metamask.png" alt ="" width="300px" height="150px"><figcaption style="padding-top:20px;text-align:center;font-family:'Lucida Console',monospace;font-size:22px;">MetaMask's Latest<br>Privacy Update</figcaption></a></figure>	
-<figure><a href="https://www.coingecko.com/research/publications/the-beginner-s-guide-to-mev" class="w3-bar-item w3-button1"><img src = "web_images/mev.png" alt ="" width="300px" height="150px"><figcaption style="padding-top:20px;text-align:center;font-family:'Lucida Console',monospace;font-size:22px;">The Beginner's<br>Guide to MEV</figcaption></a></figure>
-</center>
-<br><br>	
-<center>	
-<h style="font-family:'Lucida Console',monospace;font-size:52px;position:relative;"> Reports </h>
-	<br>
-<figure><a href="https://assets.coingecko.com/reports/Research/The-State-of-Decentralized-Storage.pdf" class="w3-bar-item w3-button1"><img src = "web_images/decso.png" alt ="" width="175px" height="231px"><figcaption style="padding-top:20px;text-align:center;font-family:'Lucida Console',monospace;font-size:24px;">Decentralized <br>Storage </figcaption></a></figure>
-<figure><a href="https://assets.coingecko.com/reports/Research/Deep-Diving-Into-ETH-Liquid-Staking.pdf" class="w3-bar-item w3-button1"><img src = "web_images/ETHLS.png" alt ="" width="175px" height="231px"><figcaption style="padding-top:20px;text-align:center;font-family:'Lucida Console',monospace;font-size:24px;">ETH Liquid <br> Staking</figcaption></a></figure>
-<figure><a href="https://assets.coingecko.com/reports/Research/The-State-of-Decentralized-Perpetual-Protocols.pdf" class="w3-bar-item w3-button1"><img src = "web_images/decperp.png" alt ="" width="175px" height="231px"><figcaption style="padding-top:20px;text-align:center;font-family:'Lucida Console',monospace;font-size:24px;">Decentralized<br>Perpetuals</figcaption></a></figure>
-<figure><a href="https://assets.coingecko.com/reports/Research/GameFi-Report-2023-GameFi-Levels-Up.pdf" class="w3-bar-item w3-button1"><img src = "web_images/gamefi.png" alt ="" width="175px" height="231px"><figcaption style="padding-top:19px;text-align:center;font-family:'Lucida Console',monospace;font-size:24px;">GameFi<br><br></figcaption></a></figure>
-<br>
-<figure><a href="https://assets.coingecko.com/reports/Research/RWA-Report-2024-Rise-of-Real-World-Assets-in-Crypto.pdf" class="w3-bar-item w3-button1"><img src = "web_images/RWA.png" alt ="" width="175px" height="231px"><figcaption style="padding-top:19px;text-align:center;font-family:'Lucida Console',monospace;font-size:24px;">Real-World<br>Assets</figcaption></a></figure>
-<figure><a href="https://assets.coingecko.com/reports/2024/CoinGecko-State-of-Stablecoins-2024.pdf" class="w3-bar-item w3-button1"><img src = "web_images/stables.png" alt ="" width="175px" height="231px"><figcaption style="padding-top:19px;text-align:center;font-family:'Lucida Console',monospace;font-size:24px;">State of<br>Stablecoins</figcaption></a></figure>
-</center>
-<br><br>
+
+<!-- Games -->
+<div class="sec-wrap">
+<h2 class="sec">Games</h2>
+<div class="cx" style="--w:395px">
+  <button class="cx-btn cx-prev" aria-label="Previous">&#10094;</button>
+  <div class="cx-track">
+    <figure class="cx-item"><a href="https://winsquare2.itch.io/foan"><img src="web_images/foan.jpg" alt="" width="395" height="315"><figcaption>Fate of a Ninja: Apocalypse</figcaption></a></figure>
+  </div>
+  <button class="cx-btn cx-next" aria-label="Next">&#10095;</button>
+</div>
+</div>
+
+<!-- Books -->
+<div class="sec-wrap">
+<h2 class="sec">Books</h2>
+<div class="cx" style="--w:221px">
+  <button class="cx-btn cx-prev" aria-label="Previous">&#10094;</button>
+  <div class="cx-track">
+    <figure class="cx-item"><a href="https://landing.coingecko.com/how-to-bitcoin/"><img src="web_images/bitcoinbook.jpg" alt="" width="221" height="313"><figcaption>How To Bitcoin</figcaption></a></figure>
+    <figure class="cx-item"><a href="https://landing.coingecko.com/how-to-defi/"><img src="web_images/defi_beginner.jpg" alt="" width="221" height="313"><figcaption>How To Defi:<br>Beginner</figcaption></a></figure>
+    <figure class="cx-item"><a href="https://landing.coingecko.com/how-to-defi/"><img src="web_images/defi_advanced.jpg" alt="" width="221" height="313"><figcaption>How To Defi:<br>Advanced</figcaption></a></figure>
+    <figure class="cx-item"><a href="https://landing.coingecko.com/how-to-nft/"><img src="web_images/how-to-nft.jpg" alt="" width="221" height="313"><figcaption>How To NFT</figcaption></a></figure>
+  </div>
+  <button class="cx-btn cx-next" aria-label="Next">&#10095;</button>
+</div>
+</div>
+
+<!-- Articles -->
+<div class="sec-wrap">
+<h2 class="sec">Articles</h2>
+<div class="cx" style="--w:300px; --fs:22px">
+  <button class="cx-btn cx-prev" aria-label="Previous">&#10094;</button>
+  <div class="cx-track">
+    <figure class="cx-item"><a href="https://www.coingecko.com/research/publications/decentralized-options-a-comparison-of-designs"><img src="web_images/options.jpg" alt="" width="300" height="150"><figcaption>Decentralized Options:<br>A Comparison of Designs</figcaption></a></figure>
+    <figure class="cx-item"><a href="https://www.coingecko.com/research/publications/yield-farming-on-binance-smart-chain"><img src="web_images/bsc.jpg" alt="" width="300" height="150"><figcaption>Yield Farming on<br>Binance Smart Chain</figcaption></a></figure>
+    <figure class="cx-item"><a href="https://www.coingecko.com/research/publications/yield-farming-on-solana"><img src="web_images/sam.jpg" alt="" width="300" height="150"><figcaption>Yield Farming<br>on Solana</figcaption></a></figure>
+    <figure class="cx-item"><a href="https://www.coingecko.com/research/publications/yield-farming-on-polygon"><img src="web_images/polygon.png" alt="" width="300" height="150"><figcaption>Yield Farming<br>on Polygon</figcaption></a></figure>
+    <figure class="cx-item"><a href="https://www.coingecko.com/research/publications/tokenizing-future-yield"><img src="web_images/future-yield.png" alt="" width="300" height="150"><figcaption>Tokenizing<br>Future Yield</figcaption></a></figure>
+    <figure class="cx-item"><a href="https://www.coingecko.com/research/publications/chiliz-bringing-power-back-to-the-fans"><img src="web_images/chiliz.JPG" alt="" width="300" height="150"><figcaption>Chiliz - Bringing Power<br>Back To The Fans</figcaption></a></figure>
+    <figure class="cx-item"><a href="https://www.coingecko.com/research/publications/play-to-earn-a-study-on-scholarship-viability"><img src="web_images/axie.JPG" alt="" width="300" height="150"><figcaption>Play-to-Earn: A Study<br>on Scholarship Viability</figcaption></a></figure>
+    <figure class="cx-item"><a href="https://www.coingecko.com/research/publications/yield-farming-on-avalanche"><img src="web_images/avax.JPG" alt="" width="300" height="150"><figcaption>Yield Farming on<br>Avalanche</figcaption></a></figure>
+    <figure class="cx-item"><a href="https://www.coingecko.com/research/publications/how-to-get-started-with-decentraland-gameplay-review"><img src="web_images/decentra.JPG" alt="" width="300" height="150"><figcaption>How To Get Started<br>With Decentraland</figcaption></a></figure>
+    <figure class="cx-item"><a href="https://www.coingecko.com/research/publications/fantom-ftm-token-explained-why-is-it-so-unique"><img src="web_images/ftm.png" alt="" width="300" height="150"><figcaption>Fantom Explained:<br>Why Is It So Unique</figcaption></a></figure>
+    <figure class="cx-item"><a href="https://www.coingecko.com/research/publications//is-liquidity-drying-up-in-the-crypto-markets"><img src="web_images/liq.png" alt="" width="300" height="150"><figcaption>Is Liquidity Drying Up<br>In The Crypto Markets?</figcaption></a></figure>
+    <figure class="cx-item"><a href="https://www.coingecko.com/research/publications/what-is-apy-apr-and-impermanent-loss"><img src="web_images/apy.png" alt="" width="300" height="150"><figcaption>What Is APY, APR and<br>Impermanent Loss</figcaption></a></figure>
+    <figure class="cx-item"><a href="https://www.coingecko.com/research/publications/the-whitelist-how-to-get-early-access-to-nft-drops"><img src="web_images/whitelist.png" alt="" width="300" height="150"><figcaption>How To Get Early<br>Access to NFT Drops</figcaption></a></figure>
+    <figure class="cx-item"><a href="https://www.coingecko.com/research/publications/what-s-going-on-in-aave-v3"><img src="web_images/aave.png" alt="" width="300" height="150"><figcaption>What's Going On<br>In Aave V3?</figcaption></a></figure>
+    <figure class="cx-item"><a href="https://www.coingecko.com/research/publications/the-evolution-of-hedging-and-delta-neutral-strategies"><img src="web_images/delta.png" alt="" width="300" height="150"><figcaption>Hedging and<br>Delta-Neutral Strategies</figcaption></a></figure>
+    <figure class="cx-item"><a href="https://www.coingecko.com/research/publications/the-curve-wars-will-there-be-any-survivors"><img src="web_images/curve.png" alt="" width="300" height="150"><figcaption>The Curve<br>Wars</figcaption></a></figure>
+    <figure class="cx-item"><a href="https://www.coingecko.com/research/publications/bring-it-on-bancor-3"><img src="web_images/bancor.png" alt="" width="300" height="150"><figcaption>Bring It On,<br>Bancor 3!</figcaption></a></figure>
+    <figure class="cx-item"><a href="https://www.coingecko.com/research/publications/reddit-nfts-the-new-gateway-for-newbies"><img src="web_images/reddit.png" alt="" width="300" height="150"><figcaption>Reddit NFTs<br>Gateway for Newbies</figcaption></a></figure>
+    <figure class="cx-item"><a href="https://www.coingecko.com/research/publications/insights-and-implications-of-the-mango-squeeze"><img src="web_images/mango.png" alt="" width="300" height="150"><figcaption>The Mango<br>Squeeze</figcaption></a></figure>
+    <figure class="cx-item"><a href="https://www.coingecko.com/research/publications/metamask-s-latest-privacy-update-what-can-you-do-to-preserve-your-privacy"><img src="web_images/metamask.png" alt="" width="300" height="150"><figcaption>MetaMask's Latest<br>Privacy Update</figcaption></a></figure>
+    <figure class="cx-item"><a href="https://www.coingecko.com/research/publications/the-beginner-s-guide-to-mev"><img src="web_images/mev.png" alt="" width="300" height="150"><figcaption>The Beginner's<br>Guide to MEV</figcaption></a></figure>
+  </div>
+  <button class="cx-btn cx-next" aria-label="Next">&#10095;</button>
+</div>
+</div>
+
+<!-- Reports -->
+<div class="sec-wrap">
+<h2 class="sec">Reports</h2>
+<div class="cx" style="--w:200px">
+  <button class="cx-btn cx-prev" aria-label="Previous">&#10094;</button>
+  <div class="cx-track">
+    <figure class="cx-item"><a href="https://assets.coingecko.com/reports/Research/The-State-of-Decentralized-Storage.pdf"><img src="web_images/decso.png" alt="" width="175" height="231"><figcaption>Decentralized<br>Storage</figcaption></a></figure>
+    <figure class="cx-item"><a href="https://assets.coingecko.com/reports/Research/Deep-Diving-Into-ETH-Liquid-Staking.pdf"><img src="web_images/ETHLS.png" alt="" width="175" height="231"><figcaption>ETH Liquid<br>Staking</figcaption></a></figure>
+    <figure class="cx-item"><a href="https://assets.coingecko.com/reports/Research/The-State-of-Decentralized-Perpetual-Protocols.pdf"><img src="web_images/decperp.png" alt="" width="175" height="231"><figcaption>Decentralized<br>Perpetuals</figcaption></a></figure>
+    <figure class="cx-item"><a href="https://assets.coingecko.com/reports/Research/GameFi-Report-2023-GameFi-Levels-Up.pdf"><img src="web_images/gamefi.png" alt="" width="175" height="231"><figcaption>GameFi</figcaption></a></figure>
+    <figure class="cx-item"><a href="https://assets.coingecko.com/reports/Research/RWA-Report-2024-Rise-of-Real-World-Assets-in-Crypto.pdf"><img src="web_images/RWA.png" alt="" width="175" height="231"><figcaption>Real-World<br>Assets</figcaption></a></figure>
+    <figure class="cx-item"><a href="https://assets.coingecko.com/reports/2024/CoinGecko-State-of-Stablecoins-2024.pdf"><img src="web_images/stables.png" alt="" width="175" height="231"><figcaption>State of<br>Stablecoins</figcaption></a></figure>
+  </div>
+  <button class="cx-btn cx-next" aria-label="Next">&#10095;</button>
+</div>
+</div>
+
 <center>
 <getresponse-form form-id="160c7f82-6d38-46a1-9974-b323ce663aaa" e="1"></getresponse-form>
 
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
@@ -194,6 +179,26 @@ function w3_open() {
 function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
 }
-</script>   
+
+// Carousels: arrow buttons scroll the track; swipe/trackpad scroll works natively
+document.querySelectorAll('.cx').forEach(function(cx){
+  var t = cx.querySelector('.cx-track');
+  var prev = cx.querySelector('.cx-prev');
+  var next = cx.querySelector('.cx-next');
+  function update(){
+    cx.classList.toggle('cx-static', t.scrollWidth <= t.clientWidth + 2);
+    prev.disabled = t.scrollLeft <= 2;
+    next.disabled = t.scrollLeft + t.clientWidth >= t.scrollWidth - 2;
+  }
+  prev.addEventListener('click', function(){ t.scrollBy({left: -t.clientWidth * 0.8, behavior:'smooth'}); });
+  next.addEventListener('click', function(){ t.scrollBy({left:  t.clientWidth * 0.8, behavior:'smooth'}); });
+  t.addEventListener('scroll', update);
+  window.addEventListener('resize', update);
+  window.addEventListener('load', update);
+  update();
+});
+</script>
+</center>
 </body>
-</html> 
+</html>
+
